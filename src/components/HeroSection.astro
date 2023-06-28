@@ -1,3 +1,16 @@
+---
+import { Image } from "@astrojs/image/components";
+
+import heroImage from "../images/natalia1.jpg";
+
+// import { getImage } from '@astrojs/image';
+
+// const { src } = await getImage({
+//   src: import('../assets/hero.png'),
+//   alt: 'My hero image',
+// });
+---
+
 <section
     class="container min-h-screen pt-24 pb-12 lg:pb-0 lg:pt-0 justify-center flex flex-col items-start lg:flex-row lg:items-center relative"
 >
@@ -17,10 +30,18 @@
             >Dowiedz się więcej</button
         >
     </div>
-    <img
+    <!-- <img
         class="hero-img rounded-xl shadow-2xl transition-all mt-8 max-w-lg w-full mx-auto"
         src="/natalia1.jpg"
         alt=""
+    /> -->
+    <Image
+        class="hero-img rounded-xl shadow-2xl transition-all mt-8 max-w-lg w-full mx-auto"
+        src={heroImage}
+        alt="Natalia Kyrylova"
+        width={500}
+        height={500}
+        format="webp"
     />
     <div
         class="rounded-full w-[340px] h-[320px] bg-teal-700/10 absolute -right-28 -z-10 lg:top-48"
