@@ -5,7 +5,7 @@ import { Image } from "@astrojs/image/components";
 
 const filter = Astro.url.searchParams.get("filtr")! || "";
 
-const images = ["gal1.jpg", "gal3.jpg", "gal4.jpg", "gal5.jpg", "gal6.jpg"];
+const images = ["gal1", "gal3", "gal4", "gal5", "gal6"];
 ---
 
 <Layout
@@ -26,7 +26,9 @@ const images = ["gal1.jpg", "gal3.jpg", "gal4.jpg", "gal5.jpg", "gal6.jpg"];
                             <div class="overflow-hidden rounded-lg cursor-pointer">
                                 <Image
                                     class="w-full h-full hover:scale-110 transition-all"
-                                    src={import("../images/gallery/" + image)}
+                                    src={import(
+                                        `../images/gallery/${image}.jpg`
+                                    )}
                                     alt="Zdjęcie z galerii"
                                     width={400}
                                     format="webp"
