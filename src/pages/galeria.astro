@@ -1,0 +1,47 @@
+---
+import Gallery from "../components/Gallery.vue";
+import Layout from "../layouts/Layout.astro";
+
+const filter = Astro.url.searchParams.get("filtr")! || "";
+
+import { getImage } from "@astrojs/image";
+
+const images = [
+    "gal1.jpg",
+    "gal2.jpg",
+    "gal3.jpg",
+    "gal4.jpg",
+    "gal5.jpg",
+    "gal6.jpg",
+];
+
+const optImages: string[] = [];
+
+images.forEach(async (image) => {
+    const { src } = await getImage({
+        src: import("../images/gallery/" + image),
+        alt: "My hero image",
+        width: 400,
+        format: "webp",
+    });
+    optImages.push(src);
+});
+
+console.log(optImages);
+---
+
+<Layout
+    title="Natalia Kyrylova - Salon fryzjerski"
+    description="Oferujemy wysokiej jakości usługi fryzjerskie, koloryzację, stylizację i pielęgnację włosów. Zaufaj naszemu doświadczeniu i profesjonalnemu podejściu. Zapraszamy do naszego salonu fryzjerskiego w Zorach"
+>
+    <div class="mt-16">
+        <div class="container">
+            <h1 class="text-5xl text-center font-bold text-neutral-700 pt-8">
+                Galeria stylizacji
+            </h1>
+            <div>
+                <Gallery photos={optImages} />
+            </div>
+        </div>
+    </div>
+</Layout>
