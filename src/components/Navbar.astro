@@ -12,23 +12,27 @@ import { Icon } from "astro-icon";
 
         <!-- NAVITEMS -->
         <ul class="nav-items">
-            <li class="nav-item"><a href="">Stylizacje</a></li>
-            <li class="nav-item"><a href="">O mnie</a></li>
-            <li class="nav-item"><a href="">Kontakt</a></li>
+            <li class="nav-item"><a href="#stylizacje">Stylizacje</a></li>
+            <li class="nav-item"><a href="#o-mnie">O mnie</a></li>
+            <li class="nav-item"><a href="#kontakt">Kontakt</a></li>
         </ul>
 
         <!-- MOBILE NAVITEMS -->
         <div class="mobile-nav-items">
             <div class="items-container">
                 <ul>
-                    <li class="nav-item"><a href="">Stylizacje</a></li>
-                    <li class="nav-item"><a href="">O mnie</a></li>
-                    <li class="nav-item"><a href="">Kontakt</a></li>
+                    <li class="nav-item">
+                        <a href="#stylizacje">Stylizacje</a>
+                    </li>
+                    <li class="nav-item"><a href="#o-mnie">O mnie</a></li>
+                    <li class="nav-item"><a href="#kontakt">Kontakt</a></li>
                 </ul>
                 <div
                     class="space-x-4 flex items-center w-full md:hidden lg:ml-6 ml-2"
                 >
-                    <div
+                    <a
+                        href="https://www.instagram.com/kirilova_exklusiv/"
+                        target="_blank"
                         class="bg-neutral-50 p-2.5 rounded-lg hover:bg-teal-50 transition-all cursor-pointer text-neutral-500 hover:text-teal-800"
                     >
                         <svg
@@ -52,7 +56,7 @@ import { Icon } from "astro-icon";
                                 </clipPath>
                             </defs>
                         </svg>
-                    </div>
+                    </a>
                     <div
                         class="bg-neutral-50 p-2.5 rounded-lg hover:bg-teal-50 transition-all cursor-pointer text-neutral-500 hover:text-teal-800"
                     >
@@ -84,7 +88,9 @@ import { Icon } from "astro-icon";
 
         <!-- SOCIAL MEDIA -->
         <div class="space-x-4 hidden md:flex ml-auto lg:ml-6">
-            <div
+            <a
+                href="https://www.instagram.com/kirilova_exklusiv/"
+                target="_blank"
                 class="bg-neutral-100 p-2.5 rounded-lg hover:bg-teal-50 transition-all cursor-pointer text-neutral-500 hover:text-teal-800"
             >
                 <svg
@@ -106,7 +112,7 @@ import { Icon } from "astro-icon";
                         </clipPath>
                     </defs>
                 </svg>
-            </div>
+            </a>
             <div
                 class="bg-neutral-100 p-2.5 rounded-lg hover:bg-teal-50 transition-all cursor-pointer text-neutral-500 hover:text-teal-800"
             >

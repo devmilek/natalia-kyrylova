@@ -1,10 +1,9 @@
 ---
 import Gallery from "../components/Gallery.vue";
 import Layout from "../layouts/Layout.astro";
+import { Image } from "@astrojs/image/components";
 
 const filter = Astro.url.searchParams.get("filtr")! || "";
-
-import { getImage } from "@astrojs/image";
 
 const images = [
     "gal1.jpg",
@@ -14,33 +13,35 @@ const images = [
     "gal5.jpg",
     "gal6.jpg",
 ];
-
-const optImages: string[] = [];
-
-images.forEach(async (image) => {
-    const { src } = await getImage({
-        src: import("../images/gallery/" + image),
-        alt: "My hero image",
-        width: 400,
-        format: "webp",
-    });
-    optImages.push(src);
-});
-
-console.log(optImages);
 ---
 
 <Layout
     title="Natalia Kyrylova - Salon fryzjerski"
     description="Oferujemy wysokiej jakości usługi fryzjerskie, koloryzację, stylizację i pielęgnację włosów. Zaufaj naszemu doświadczeniu i profesjonalnemu podejściu. Zapraszamy do naszego salonu fryzjerskiego w Zorach"
 >
-    <div class="mt-16">
+    <div class="my-16">
         <div class="container">
             <h1 class="text-5xl text-center font-bold text-neutral-700 pt-8">
                 Galeria stylizacji
             </h1>
-            <div>
-                <Gallery photos={optImages} />
+            <div
+                class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-10"
+            >
+                {
+                    images.map((image) => {
+                        return (
+                            <div class="overflow-hidden rounded-lg cursor-pointer">
+                                <Image
+                                    class="w-full h-full hover:scale-110 transition-all"
+                                    src={import("../images/gallery/" + image)}
+                                    alt="Zdjęcie z galerii"
+                                    width={400}
+                                    format="webp"
+                                />
+                            </div>
+                        );
+                    })
+                }
             </div>
         </div>
     </div>

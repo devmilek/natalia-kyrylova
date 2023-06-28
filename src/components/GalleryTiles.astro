@@ -1,30 +1,48 @@
-<section class="container flex flex-col gap-4 md:gap-6 lg:flex-row">
-    <a href="/" class="man-gallery-bg gallery-tile">Stylizacje męskie</a>
-    <a href="/" class="woman-gallery-bg gallery-tile">Stylizacje damskie</a>
+---
+import { Image } from "@astrojs/image/components";
+
+import menImage from "../images/men.jpg";
+import womenImage from "../images/woman.jpg";
+---
+
+<section
+    class="container flex flex-col gap-4 md:gap-6 lg:flex-row scroll-mt-40"
+    id="stylizacje"
+>
+    <a href="/galeria" class="man-gallery-bg gallery-tile relative group">
+        <div
+            class="h-full w-full bg-neutral-900/70 z-30 absolute flex items-center justify-center"
+        >
+            <h2>Stylizacje męskie</h2>
+        </div>
+        <Image
+            src={menImage}
+            alt="Zdjęcie galerii"
+            width={500}
+            height={500}
+            format="webp"
+            class="w-full h-full object-cover group-hover:scale-125 transition-all"
+        />
+    </a>
+    <a href="/galeria" class="man-gallery-bg gallery-tile relative group">
+        <div
+            class="h-full w-full bg-neutral-900/70 z-30 absolute flex items-center justify-center"
+        >
+            <h2>Stylizacje damskie</h2>
+        </div>
+        <Image
+            src={womenImage}
+            alt="Zdjęcie galerii"
+            width={500}
+            height={500}
+            format="webp"
+            class="w-full h-full object-cover group-hover:scale-125 transition-all"
+        />
+    </a>
 </section>
 
 <style>
     .gallery-tile {
-        @apply w-full h-64 rounded-2xl flex items-center justify-center font-display tracking-wide text-white text-2xl font-semibold md:h-80;
-    }
-
-    .man-gallery-bg {
-        background-size: cover;
-        background: linear-gradient(
-                0deg,
-                rgba(0, 0, 0, 0.6),
-                rgba(0, 0, 0, 0.6)
-            ),
-            url("/men.jpg") no-repeat center;
-    }
-
-    .woman-gallery-bg {
-        background-size: cover;
-        background: linear-gradient(
-                0deg,
-                rgba(0, 0, 0, 0.6),
-                rgba(0, 0, 0, 0.6)
-            ),
-            url("/woman.jpg") center;
+        @apply w-full h-64 rounded-2xl overflow-hidden font-display tracking-wide text-white text-2xl font-semibold md:h-80;
     }
 </style>
