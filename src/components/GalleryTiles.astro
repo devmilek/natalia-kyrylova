@@ -1,0 +1,30 @@
+<section class="container flex flex-col gap-4 md:gap-6 lg:flex-row">
+    <a href="/" class="man-gallery-bg gallery-tile">Stylizacje męskie</a>
+    <a href="/" class="woman-gallery-bg gallery-tile">Stylizacje damskie</a>
+</section>
+
+<style>
+    .gallery-tile {
+        @apply w-full h-64 rounded-2xl flex items-center justify-center font-display tracking-wide text-white text-2xl font-semibold md:h-80;
+    }
+
+    .man-gallery-bg {
+        background-size: cover;
+        background: linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.6),
+                rgba(0, 0, 0, 0.6)
+            ),
+            url("/men.jpg") no-repeat center;
+    }
+
+    .woman-gallery-bg {
+        background-size: cover;
+        background: linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.6),
+                rgba(0, 0, 0, 0.6)
+            ),
+            url("/woman.jpg") center;
+    }
+</style>
