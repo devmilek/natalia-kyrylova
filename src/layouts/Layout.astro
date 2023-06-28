@@ -1,5 +1,5 @@
 ---
-import Navbar from '../components/Navbar.astro';
+import Navbar from "../components/Navbar.astro";
 export interface Props {
 	title: string;
 	description: string;
@@ -14,21 +14,24 @@ const { title, description } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="description" content={description}>
+		<meta name="description" content={description} />
 		<title>{title}</title>
 	</head>
 	<body>
 		<Navbar />
-		<slot />
+		<main class="overflow-hidden">
+			<slot />
+		</main>
 	</body>
 </html>
 
 <style is:global>
+	@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
 	body {
-		@apply antialiased
+		@apply antialiased;
 	}
 
 	.container {
-		@apply mx-auto px-4
+		@apply mx-auto px-4;
 	}
 </style>

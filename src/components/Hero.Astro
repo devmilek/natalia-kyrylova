@@ -1,0 +1,42 @@
+<section
+    class="container h-screen justify-center flex flex-col items-start lg:flex-row lg:items-center relative"
+>
+    <div class="lg:w-1/2 lg:mr-10">
+        <h1
+            class="font-display font-bold text-neutral-800 text-3xl tracking-widest"
+        >
+            Twoje włosy, moja pasja
+        </h1>
+        <p class="mt-4 text-neutral-600">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra
+            tortor eget pellentesque tempor. Vivamus aliquam vitae dolor eget
+            finibus. Proin eget mattis leo.
+        </p>
+        <button
+            class="bg-teal-800 text-white px-5 py-2.5 rounded-lg text-sm font-semibold mt-8 hover:bg-teal-900"
+            >Dowiedz się więcej</button
+        >
+    </div>
+    <img
+        class="hero-img rounded-xl shadow-2xl transition-all mt-8 max-w-lg w-full mx-auto"
+        src="/natalia1.jpg"
+        alt=""
+    />
+    <div
+        class="rounded-full w-[340px] h-[320px] bg-teal-700/10 absolute -right-28 -z-10 lg:top-48"
+    >
+    </div>
+    <div
+        class="rounded-full w-[840px] h-[370px] bg-teal-700/10 absolute -left-52 bottom-20 -z-10 md:-left-40 lg:h-[470px] lg:left-80 lg:bottom-24 xl:left-[32rem]"
+    >
+    </div>
+</section>
+
+<style>
+    .hero-img {
+        transform: perspective(800px) rotateY(14deg) scale(0.9) rotateX(10deg);
+    }
+    .hero-img:hover {
+        transform: perspective(800px) rotateY(0deg) scale(1) rotateX(0deg);
+    }
+</style>

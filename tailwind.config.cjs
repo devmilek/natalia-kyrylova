@@ -5,6 +5,9 @@ module.exports = {
 		extend: {
 			colors: {
 				primary: '#4A625C',
+			},
+			fontFamily: {
+				display: ['Montserrat', 'sans-serif'],
 			}
 		},
 	},
