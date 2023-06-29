@@ -1,0 +1,32 @@
+<form
+    action="https://formbold.com/s/6vBLM"
+    method="POST"
+    class="w-full bg-[#4A625C26] p-6 rounded-2xl flex flex-col items-end mt-8 lg:mt-0"
+>
+    <div class="flex flex-col w-full">
+        <label for="name" class="label">Twoje imię</label>
+        <input id="name" name="Imie" type="text" class="input" />
+    </div>
+    <div class="flex flex-col mt-6 w-full">
+        <label for="email" class="label">Twój adres e-mail</label>
+        <input id="email" name="Adres email" type="email" class="input" />
+    </div>
+    <div class="flex flex-col mt-6 w-full">
+        <label for="message" class="label">Twoja wiadomość</label>
+        <textarea id="message" name="Wiadomosc" class="input"></textarea>
+    </div>
+    <button
+        type="submit"
+        class="bg-teal-800 text-white px-5 py-2.5 rounded-lg text-sm font-medium mt-6 hover:bg-teal-900 transition-all"
+        >Wyślij wiadomość</button
+    >
+</form>
+
+<style>
+    .label {
+        @apply font-medium mb-2;
+    }
+    .input {
+        @apply rounded-lg px-4 py-2 border border-neutral-300 focus:outline-teal-700;
+    }
+</style>

@@ -1,18 +1,28 @@
+---
+import { Image } from "@astrojs/image/components";
+
+import NataliaNoBg from "../images/natalia-nobg.png";
+---
+
 <section class="pt-28 md:pt-36 lg:pt-32 scroll-m-16" id="o-mnie">
     <div class="bg-[#687E79] relative h-64 md:h-72 lg:hidden">
-        <img
+        <Image
+            src={NataliaNoBg}
+            width={500}
+            format="png"
+            alt="Natalia Kyrylova"
             class="absolute bottom-0 left-0 right-0 m-auto w-52 md:w-60"
-            src="/natalia-nobg.png"
-            alt=""
         />
     </div>
     <div class="bg-[#4A625C]">
         <div class="container lg:flex">
             <div class="relative w-80 shrink-0 hidden lg:block mr-14">
-                <img
+                <Image
                     class="absolute bottom-0 left-0 right-0 m-auto w-full"
-                    src="/natalia-nobg.png"
-                    alt=""
+                    src={NataliaNoBg}
+                    width={500}
+                    format="png"
+                    alt="Natalia Kyrylova"
                 />
             </div>
             <div class="py-10 lg:py-32">
