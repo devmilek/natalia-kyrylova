@@ -5,6 +5,64 @@ import { Image } from "@astrojs/image/components";
 const filter = Astro.url.searchParams.get("filtr")! || "";
 
 const images = ["gal1", "gal3", "gal4", "gal5", "gal6"];
+
+const imagesArr = [
+    {
+        src: "gal1",
+        cat: "meskie",
+    },
+    {
+        src: "gal3",
+        cat: "damskie",
+    },
+    {
+        src: "gal4",
+        cat: "damskie",
+    },
+    {
+        src: "gal5",
+        cat: "damskie",
+    },
+    {
+        src: "gal6",
+        cat: "damskie",
+    },
+    {
+        src: "gal7",
+        cat: "damskie",
+    },
+    {
+        src: "gal8",
+        cat: "damskie",
+    },
+    {
+        src: "gal9",
+        cat: "damskie",
+    },
+    {
+        src: "gal10",
+        cat: "damskie",
+    },
+    {
+        src: "gal11",
+        cat: "damskie",
+    },
+    {
+        src: "gal12",
+        cat: "meskie",
+    },
+    {
+        src: "gal13",
+        cat: "meskie",
+    },
+];
+
+const filteredImages = imagesArr.filter((image) => {
+    if (filter == "") {
+        return true;
+    }
+    return image.cat == filter;
+});
 ---
 
 <Layout
@@ -17,20 +75,36 @@ const images = ["gal1", "gal3", "gal4", "gal5", "gal6"];
                 Galeria stylizacji
             </h1>
             <div
+                class="w-full flex items-center justify-center gap-4 mt-6 flex-wrap"
+            >
+                <a href="/galeria" class={filter == "" ? "active" : ""}
+                    >Wszystkie</a
+                >
+                <a
+                    href="/galeria?filtr=damskie"
+                    class={filter == "damskie" ? "active" : ""}>Damskie</a
+                >
+                <a
+                    href="/galeria?filtr=meskie"
+                    class={filter == "meskie" ? "active" : ""}>Męskie</a
+                >
+            </div>
+            <div
                 class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-10"
             >
                 {
-                    images.map((image) => {
+                    filteredImages.map((image) => {
                         return (
                             <div class="overflow-hidden rounded-lg cursor-pointer">
                                 <Image
                                     class="w-full h-full hover:scale-110 transition-all"
                                     src={import(
-                                        `../images/gallery/${image}.jpg`
+                                        `../images/gallery/${image.src}.jpg`
                                     )}
                                     alt="Zdjęcie z galerii"
                                     width={400}
                                     format="webp"
+                                    quality={80}
                                 />
                             </div>
                         );
@@ -40,3 +114,12 @@ const images = ["gal1", "gal3", "gal4", "gal5", "gal6"];
         </div>
     </div>
 </Layout>
+
+<style>
+    a {
+        @apply border px-4 py-2 rounded-lg font-medium text-sm;
+    }
+    a.active {
+        @apply bg-teal-700 text-white;
+    }
+</style>
