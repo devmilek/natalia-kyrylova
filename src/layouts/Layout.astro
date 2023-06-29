@@ -17,6 +17,16 @@ const { title, description } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="description" content={description} />
 		<title>{title}</title>
+		<!-- OG TAGS -->
+		<meta
+			property="og:title"
+			content="Natalia Kyrylova - Salon fryzjerski"
+		/>
+		<meta
+			property="og:description"
+			content="Oferujemy wysokiej jakości usługi fryzjerskie, koloryzację, stylizację i pielęgnację włosów. Zaufaj naszemu doświadczeniu i profesjonalnemu podejściu."
+		/>
+		<meta property="og:url" content="nataliiakyrylova.pl" />
 	</head>
 	<body>
 		<Navbar />
@@ -34,7 +44,7 @@ const { title, description } = Astro.props;
 	}
 
 	.container {
-		@apply mx-auto px-4;
+		@apply mx-auto;
 	}
 
 	html {
